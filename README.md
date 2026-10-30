@@ -24,8 +24,9 @@ A POD 2.0 custom widget for SAP Digital Manufacturing that lets a shop-floor use
 2. Add the widget **Scrap Inventory** (category *Custom Widgets*) to a POD page.
 <img width="1919" height="565" alt="image" src="https://github.com/user-attachments/assets/32b9a95e-a6c5-4127-a167-1c75ebf6d901" />
 
-3. Save and open the POD in **Run** mode.
+3. Save and open the POD in **Run** mode, search by Material, and scrap some Quantity for a given Inventory ID
 <img width="1430" height="352" alt="image" src="https://github.com/user-attachments/assets/58f7425e-6863-4cd0-9e15-59dc06a68df7" />
+<img width="1702" height="713" alt="image" src="https://github.com/user-attachments/assets/770ef39d-1d52-4d82-97b8-c0ce997dabd0" />
 
 ---
 
