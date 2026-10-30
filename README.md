@@ -19,6 +19,8 @@ The **only** standard path for this kind of scrap posting is the separate **Mana
 4. **Decrease the Quantity on Hand** by entering the **Quantity to Adjust**.
 5. Select the reason code **`SCR-SCRAP`** and save.
 
+<img width="1901" height="678" alt="image" src="https://github.com/user-attachments/assets/d4019731-135a-4f44-a3c6-779cbad81561" />
+
 Reference — SAP Help: [Floor Stock Return and Scrap](https://help.sap.com/docs/sap-digital-manufacturing/execution/floor-stock-return-scrap).
 
 This means the operator must **leave the POD**, switch to a general inventory-maintenance app, locate the stock, and perform a multi-step adjustment — friction that is impractical during live execution. **That is exactly the gap this custom POD 2.0 plugin closes**: it brings component / floor-stock / inventory-ID scrap *into* the POD itself.
