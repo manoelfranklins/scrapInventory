@@ -1,4 +1,4 @@
-# Scrap Inventory — SAP DM POD 2.0 Plugin
+# Scrap Components Inventory — SAP DM POD 2.0 Plugin
 
 A POD 2.0 custom widget for SAP Digital Manufacturing that lets a shop-floor user find ERP-origin inventory stock for a material and scrap partial or full quantities, directly from POD 2.0.
 
@@ -19,11 +19,13 @@ A POD 2.0 custom widget for SAP Digital Manufacturing that lets a shop-floor use
 ## Install / Deploy
 
 1. Deploy `ScrapInventory_deployment.zip` via Manage PODs 2.0.
-2. Add the widget **Scrap Inventory** (category *Custom Widgets*) to a POD page.
-3. Save and assign the POD; open it in **Run** mode.
-
 <img width="1917" height="635" alt="image" src="https://github.com/user-attachments/assets/744a04f4-eff8-4190-a696-f398cf2a87c0" />
 
+2. Add the widget **Scrap Inventory** (category *Custom Widgets*) to a POD page.
+<img width="1919" height="565" alt="image" src="https://github.com/user-attachments/assets/32b9a95e-a6c5-4127-a167-1c75ebf6d901" />
+
+3. Save and open the POD in **Run** mode.
+<img width="1430" height="352" alt="image" src="https://github.com/user-attachments/assets/58f7425e-6863-4cd0-9e15-59dc06a68df7" />
 
 ---
 
