@@ -95,16 +95,6 @@ Because the inventory API filters `material` by **exact match** and paginates in
 - The dialog paginates and **substring-searches client-side**, so `DRILL` matches `DRILL-TIP`.
 - Clicking a row selects the material and auto-loads its inventory; typing in the field and pressing Enter / leaving the field also loads.
 
-### Scrap
-There is **no scrap method on the typed client**, so scrap uses `RestClient.post`. The internal route is **resolved at runtime** (not hard-coded): candidate bases under `ApiPaths.INVENTORY_MS_PATH` (`dme/inventory-ms`) are probed with a harmless read-only GET, and the first whose response body is **real inventory JSON** (validated — guards against SPA-shell 200s) is used. Scrap then posts to `<resolvedBase>/{inventoryId}/scrap?plant=<plant>` with:
-
-```json
-{ "quantity": { "value": <qty>,
-                "unitOfMeasure": { "internalUnitOfMeasure": "<stock's real UoM>" } } }
-```
-
-The UoM is taken from the stock itself (`quantityOnHand.unitOfMeasure.internalUnitOfMeasure`), never guessed.
-
 ---
 
 ## Requirements & assumptions
