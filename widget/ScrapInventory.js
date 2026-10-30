@@ -64,7 +64,7 @@ sap.ui.define([
         static getI18nModel() { return ScrapInventory.#oI18nModel; }
         static getDisplayName() { return "Scrap Inventory"; }
         static getIcon() { return "sap-icon://sys-cancel"; }
-        static getCategory() { return "Custom"; }
+        static getCategory() { return "Custom Widgets"; }
 
         #oLog = Logger.getLogger("custom.pod2.scrapInventory.widget.ScrapInventory");
         #oMaterialInput = null;
