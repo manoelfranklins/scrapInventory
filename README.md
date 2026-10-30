@@ -9,7 +9,7 @@ Operators search a material, browse its ERP-origin stock across the plant, and p
 
 ---
 
-## Why we built this
+## Why I built this
 
 Out of the box, SAP Digital Manufacturing does **not** allow scrapping a **component material / floor stock / inventory ID directly from a POD**. Yet this is a very common shop-floor requirement: an operator who finds damaged, expired, or otherwise unusable stock while executing an order has no standard way to scrap it from the POD they are already working in.
 
@@ -83,22 +83,6 @@ This means the operator must **leave the POD**, switch to a general inventory-ma
 
 ---
 
-## How it works
-
-### Data source
-All inventory reads go through the typed client **`ApiClient.inventory.getInventories({ plant, material?, materialVersion?, size, page })`**, which returns a tuple `[items, totalCount]` and resolves gateway routing + auth internally. Only **ERP-origin** stocks (`item.origin === "ERP"`) are shown — those are the scrap-eligible ones.
-
-### Select Material (Browse)
-Because the inventory API filters `material` by **exact match** and paginates inventory *records* (not distinct materials), the dialog builds the material list **client-side**:
-
-- On widget load it **pre-warms** a cache of distinct ERP materials in the background (non-blocking, run mode only).
-- The scan fetches page 0 to learn the total, then fetches the remaining pages **in parallel** (capped), de-duping by `inventoryId`, bounded by a hard page cap.
-- Results are cached in `sessionStorage` per plant (15-min TTL); reopening skips the scan.
-- The dialog paginates and **substring-searches client-side**, so `DRILL` matches `DRILL-TIP`.
-- Clicking a row selects the material and auto-loads its inventory; typing in the field and pressing Enter / leaving the field also loads.
-
----
-
 ## Requirements & assumptions
 
 - SAP Digital Manufacturing **POD 2.0** runtime.
@@ -111,4 +95,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 👨‍💻 Author
 Manoel Costa http://manoelcosta.com/
 
-Disclaimer: This is a community extension and is not officially supported by SAP. Use at your own discretion.
+**Disclaimer**: This is a community extension and is not officially supported by SAP. Use at your own discretion.
