@@ -1,6 +1,9 @@
 # Scrap Inventory — SAP DM POD 2.0 Plugin
 
-A POD 2.0 custom widget for SAP Digital Manufacturing that lets a shop-floor user find ERP-origin inventory stock for a material and scrap partial or full quantities, directly from the POD.
+A POD 2.0 custom widget for SAP Digital Manufacturing that lets a shop-floor user find ERP-origin inventory stock for a material and scrap partial or full quantities, directly from POD 2.0.
+
+<img width="1430" height="352" alt="image" src="https://github.com/user-attachments/assets/58f7425e-6863-4cd0-9e15-59dc06a68df7" />
+
 
 ---
 
@@ -15,14 +18,12 @@ A POD 2.0 custom widget for SAP Digital Manufacturing that lets a shop-floor use
 
 ## Install / Deploy
 
-1. Deploy `ScrapInventory_deployment.zip` via the SAP DM **Extension Center** (Plugin upload).
-2. In the **POD Designer**, add the widget **Scrap Inventory** (category *Custom*) to a POD page.
+1. Deploy `ScrapInventory_deployment.zip` via Manage PODs 2.0.
+2. Add the widget **Scrap Inventory** (category *Custom Widgets*) to a POD page.
 3. Save and assign the POD; open it in **Run** mode.
 
-Stable snapshots are kept alongside the active build:
-- `ScrapInventory_deployment.zip` — current build.
-- `ScrapInventory_deployment_v2_STABLE.zip` — frozen, verified-working snapshot.
-- `ScrapInventory_deployment_v1_STABLE.zip` — earlier frozen snapshot.
+<img width="1917" height="635" alt="image" src="https://github.com/user-attachments/assets/744a04f4-eff8-4190-a696-f398cf2a87c0" />
+
 
 ---
 
@@ -74,38 +75,16 @@ The UoM is taken from the stock itself (`quantityOnHand.unitOfMeasure.internalUn
 
 ---
 
-## Build
-
-No build step — plain AMD/UI5 JavaScript. To repackage after edits:
-
-```bash
-cd 20scrapInventory
-zip -rq ScrapInventory_deployment.zip extension.json i18n widget --exclude "*.DS_Store"
-# optional sanity check:
-node --check widget/ScrapInventory.js
-```
-
----
-
 ## Requirements & assumptions
 
 - SAP Digital Manufacturing **POD 2.0** runtime.
 - The POD provides a plant context (`PodContext.getPlant()`); no OperationActivity/WorkList selection is required.
 - Only **ERP-origin, unrestricted** stock can be scrapped (enforced by the DM backend).
 
----
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Known constraints
+## 👨‍💻 Author
+Manoel Costa http://manoelcosta.com/
 
-- The inventory API has **no substring/contains search** and no "distinct materials" endpoint, so the material list is built by scanning inventory. The scan is parallelized, pre-warmed, and cached, but the very first cold load on a large plant still costs a brief one-time fetch.
-- The Browse page cap bounds the scan (at most ~20k records); extremely large plants beyond the cap would not surface every material in Browse (type the material name directly and Load as a fallback).
-
----
-
-## Troubleshooting
-
-See **`!Learn 2.0/POD2_Inventory_API_Lessons_Learned.md`** for the full API-routing playbook. Quick signals:
-
-- **403 "session expired"** on a `RestClient` call → wrong URL base (hit the POD app proxy root). Use the `ApiPaths` microservice prefix or a typed client.
-- **404 `NoResourceFoundException`** → reached a Spring service but wrong sub-path.
-- **404 `EntityRepresentationModel not found`** → base is a false positive (SPA 200) and/or the UoM in the scrap body is wrong/empty.
+Disclaimer: This is a community extension and is not officially supported by SAP. Use at your own discretion.
