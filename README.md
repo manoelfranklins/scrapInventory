@@ -1,4 +1,4 @@
-# Scrap Components Inventory — SAP DM POD 2.0 Plugin
+# Scrap Components, Floor Stock, Inventory, directly from POD 2.0
 
 A POD 2.0 custom widget for SAP Digital Manufacturing that lets a shop-floor user find ERP-origin inventory stock for a material and scrap partial or full quantities, directly from POD 2.0.
 
