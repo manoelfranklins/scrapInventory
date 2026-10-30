@@ -1,6 +1,8 @@
 # Scrap Components, Floor Stock, Inventory, directly from POD 2.0
 
-A custom SAP Digital Manufacturing **POD 2.0** widget that empowers shop-floor operators to scrap component materials, floor stock, and inventory IDs **without ever leaving the POD**. Operators search a material, browse its ERP-origin stock across the plant, and post a partial or full scrap for a specific Inventory ID in seconds, a capability SAP Digital Manufacturing does not provide out of the box. By embedding the scrap action directly into the execution screen, it removes the context-switch to the Manage Floor Stocks app, cuts a multi-step maintenance flow down to a single entry, and keeps on-hand inventory accurate through the standard DM inventory API.
+A custom SAP Digital Manufacturing **POD 2.0** widget that empowers shop-floor operators to scrap component materials, floor stock, and inventory IDs **without ever leaving the POD**. 
+
+Operators search a material, browse its ERP-origin stock across the plant, and post a partial or full scrap for a specific Inventory ID in seconds, a capability SAP Digital Manufacturing does not provide out of the box. By embedding the scrap action directly into the execution screen, it removes the context-switch to the Manage Floor Stocks app, cuts a multi-step maintenance flow down to a single entry, and keeps on-hand inventory accurate through the standard DM inventory API.
 
 <img width="1430" height="352" alt="image" src="https://github.com/user-attachments/assets/58f7425e-6863-4cd0-9e15-59dc06a68df7" />
 
